@@ -1,0 +1,130 @@
+:root{
+    --Light-Cyan : hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 28px;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--Dark-Blue);
+    display: grid;
+    place-items: center;
+}
+.card{
+    width: 350px;
+    max-height: 500px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Dark-Grayish-Blue);
+    margin: 0 auto;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+}
+.advice-number {
+    font-size: 0.44rem;
+    color: var(--Neon-Green);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 200;
+}
+.quote-container{
+    width: 100%;
+    height: 100%;
+}
+.quote{
+    color: var(--Light-Cyan);
+    font-weight: 800;
+    margin: 0.6rem 0;
+}
+.quoteTransition{
+    animation: quoteTransition 1000ms ease-in-out;
+}
+.diceAnimation {
+    animation: rollDice 1s ease;
+}
+.line{
+    content: url('images/pattern-divider-mobile.svg');
+    margin: 0.6rem auto;
+}
+.icon{
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: calc(100% - 30px);
+    right: calc(50% - 30px);
+    background-color: var(--Neon-Green);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+.icon:hover, .icon:focus {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 0.5rem transparent;
+}
+.icon > img {
+    width: 26px;
+    height: 26px;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    color: #fff;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+@keyframes quoteTransition {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 50%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+@keyframes rollDice {
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(180deg);
+    }
+    50%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0  var(--Neon-Green) }
+  }
+@media only screen and (min-width: 768px) {
+    html{
+        font-size: 34px;
+    }
+    .card{
+        min-width: 600px;
+        max-height: 720px;
+    }
+}
